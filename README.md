@@ -1,5 +1,5 @@
-# Odin projects
+# Micro Reddit
 
-This repo is used to save all the projects built as part of the Rails module from The Odin Project. It contains multiple projects inside, each with its own purposes. 
+Simplified clone of Reddit built with Ruby on Rails as part of The Odin Project course.
 
-Each project will have its own description in this document, but all the projects will live inside this one repo.
+[Project Link](https://www.theodinproject.com/lessons/ruby-on-rails-micro-reddit)
