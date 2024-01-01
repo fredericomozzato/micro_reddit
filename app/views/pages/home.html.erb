@@ -4,9 +4,11 @@
     <p>A simple Reddit clone built with Rub on Rails</p>
   </div>
 
+  <div>
+    <%= link_to "Create post", new_post_path %>
+  </div>
+
   <section id="posts">
-    <div>
-      <%= link_to "Create post", new_post_path %>
-    </div>
+    <%= render @posts %>
   </section>
 </main>
