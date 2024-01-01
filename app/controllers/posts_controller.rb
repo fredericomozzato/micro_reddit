@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: %i[ show ]
 
   def index
@@ -12,8 +13,13 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.save!
-    redirect_to @post, notice: "Post created"
+
+    if @post.save
+      redirect_to @post, notice: "Post created"
+    else
+      flash.now[:alert] = "Error creating post"
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit; end

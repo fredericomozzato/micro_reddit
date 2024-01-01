@@ -17,9 +17,27 @@ describe "User visits the new post page" do
       expect(page).to have_content "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor omnis rerum, illum accusantium veritatis iste incidunt ipsa nulla temporibus non suscipit assumenda alias consequuntur fugit expedita velit error praesentium ea."
       expect(page).to have_content "No comments yet"
     end
+
+    it "and can't create post with empty title/body" do
+      user = create(:user)
+
+      login_as user, scope: :user
+      visit new_post_path
+      click_on "Create Post"
+
+      expect(page).to have_content "Error creating post"
+      expect(page).to have_content "Title can't be blank"
+      expect(page).to have_content "Body can't be blank"
+      expect(page).to have_field "Title"
+      expect(page).to have_field "Body"
+    end
   end
 
   context "unauthenticated" do
-    it "and can't access the form"
+    it "and can't access the form" do
+      visit new_post_path
+
+      expect(current_path).to eq new_user_session_path
+    end
   end
 end
