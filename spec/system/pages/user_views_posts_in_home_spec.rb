@@ -23,6 +23,7 @@ describe "User visits the home page" do
       expect(page).to have_content "Author: user_0"
       expect(page).to have_content "Author: user_1"
       expect(page).to have_content "Author: user_2"
+      expect(page).to have_link "Comments (0)", count: 3
     end
   end
 end

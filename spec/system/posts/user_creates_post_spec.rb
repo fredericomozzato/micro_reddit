@@ -15,7 +15,7 @@ describe "User visits the new post page" do
       expect(page).to have_content "Post created"
       expect(page).to have_content "First post"
       expect(page).to have_content "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor omnis rerum, illum accusantium veritatis iste incidunt ipsa nulla temporibus non suscipit assumenda alias consequuntur fugit expedita velit error praesentium ea."
-      expect(page).to have_content "No comments yet"
+      expect(page).to have_content "Comments (0)"
     end
 
     it "and can't create post with empty title/body" do
