@@ -5,6 +5,8 @@
   </div>
 
   <div class="comments">
-    <p>Comments (0)</p>
+    <p>Comments (<%= @post.comments.count %>)</p>
+
+    <%= render @post.comments %>
   </div>
 </main>
